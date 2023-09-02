@@ -16,7 +16,7 @@ class MusicPlayerGUI:
         self.initialize_ui()
 
     def initialize_ui(self):
-        # Create and arrange GUI elements here (buttons, playlist view, etc.)
+
 
         # Create a listbox to display the playlist
         self.playlist_box = tk.Listbox(self.root, selectmode=tk.SINGLE)
@@ -56,11 +56,11 @@ class MusicPlayerGUI:
 
     def pause_music(self):
         if self.player.is_playing():
-            self.player.pause()  # Assuming you have a pause method in your MusicPlayer class
+            self.player.pause()
 
     def stop_music(self):
         if self.player.is_playing():
-            self.player.stop()  # Assuming you have a stop method in your MusicPlayer class
+            self.player.stop()
 
     def next_music(self):
         current_index = self.playlist_box.curselection()
@@ -85,7 +85,7 @@ class MusicPlayerGUI:
     def add_song(self):
         file_path = filedialog.askopenfilename(title="Select a song", filetypes=[("Audio files", "*.mp3 *.wav")])
         if file_path:
-            self.playlist.add_song(file_path)  # Assuming you have a method to add songs to your playlist
+            self.playlist.add_song(file_path)
             song_name = os.path.basename(file_path)
             self.playlist_box.insert(tk.END, song_name)
 
@@ -94,7 +94,7 @@ class MusicPlayerGUI:
         if selected_index:
             selected_index = selected_index[0]
             self.playlist.remove_song(
-                selected_index)  # Assuming you have a method to remove a song by index from your playlist
+                selected_index)
             self.playlist_box.delete(selected_index)
 
     def run(self):

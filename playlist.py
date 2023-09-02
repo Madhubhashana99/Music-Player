@@ -23,8 +23,6 @@ class Playlist:
     def shuffle(self):
         random.shuffle(self.tracks)
 
-    # Optionally, you can add a method to clear the entire playlist
+
     def clear_playlist(self):
         self.tracks = []
-
-    # ... rest of your Playlist class
